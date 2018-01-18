@@ -13,7 +13,6 @@ import { trimLabel } from '../common/trim-label.helper';
 var PieLabelComponent = /** @class */ (function () {
     function PieLabelComponent() {
         this.animations = true;
-        this.labelTrimCharacters = 20;
         this.isIE = /(edge|msie|trident)/i.test(navigator.userAgent);
         this.trimLabel = trimLabel;
     }

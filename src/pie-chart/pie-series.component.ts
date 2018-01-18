@@ -18,15 +18,16 @@ import { formatLabel } from '../common/label.helper';
   template: `
     <svg:g *ngFor="let arc of data; trackBy:trackBy">
       <svg:g ngx-charts-pie-label
-        *ngIf="labelVisible(arc)"
-        [data]="arc"
-        [radius]="outerRadius"
-        [color]="color(arc)"
-        [label]="labelText(arc)"
-        [max]="max"
-        [value]="arc.value"
-        [explodeSlices]="explodeSlices"
-        [animations]="animations">
+             *ngIf="labelVisible(arc)"
+             [data]="arc"
+             [radius]="outerRadius"
+             [color]="color(arc)"
+             [label]="labelText(arc)"
+             [labelTrimCharacters]="labelTrimCharacters"
+             [max]="max"
+             [value]="arc.value"
+             [explodeSlices]="explodeSlices"
+             [animations]="animations">
       </svg:g>
       <svg:g
         ngx-charts-pie-arc
@@ -55,7 +56,7 @@ import { formatLabel } from '../common/label.helper';
       </svg:g>
     </svg:g>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PieSeriesComponent implements OnChanges {
 
@@ -69,7 +70,7 @@ export class PieSeriesComponent implements OnChanges {
   @Input() gradient: boolean;
   @Input() activeEntries: any[];
   @Input() labelFormatting: any;
-  @Input() labelTrimCharacters = 20;
+  @Input() labelTrimCharacters;
   @Input() tooltipText: (o: any) => any;
   @Input() tooltipDisabled: boolean = false;
   @Input() tooltipTemplate: TemplateRef<any>;
@@ -181,7 +182,7 @@ export class PieSeriesComponent implements OnChanges {
   }
 
   isActive(entry): boolean {
-    if(!this.activeEntries) return false;
+    if (!this.activeEntries) return false;
     const item = this.activeEntries.find(d => {
       return entry.name === d.name && entry.series === d.series;
     });

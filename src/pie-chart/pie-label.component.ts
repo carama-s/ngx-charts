@@ -46,7 +46,7 @@ export class PieLabelComponent implements OnChanges {
   @Input() value;
   @Input() explodeSlices;
   @Input() animations: boolean = true;
-  @Input() labelTrimCharacters = 20;
+  @Input() labelTrimCharacters;
 
   trimLabel: (label: string, max?: number) => string;
   line: string;

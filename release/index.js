@@ -17335,7 +17335,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var PieLabelComponent = /** @class */ (function () {
     function PieLabelComponent() {
         this.animations = true;
-        this.labelTrimCharacters = 20;
         this.isIE = /(edge|msie|trident)/i.test(navigator.userAgent);
         this.trimLabel = __WEBPACK_IMPORTED_MODULE_2__common_trim_label_helper__["a" /* trimLabel */];
     }
@@ -17481,7 +17480,6 @@ var PieSeriesComponent = /** @class */ (function () {
         this.series = [];
         this.innerRadius = 60;
         this.outerRadius = 80;
-        this.labelTrimCharacters = 20;
         this.tooltipDisabled = false;
         this.animations = true;
         this.select = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
@@ -17646,8 +17644,8 @@ var PieSeriesComponent = /** @class */ (function () {
     PieSeriesComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'g[ngx-charts-pie-series]',
-            template: "\n    <svg:g *ngFor=\"let arc of data; trackBy:trackBy\">\n      <svg:g ngx-charts-pie-label\n        *ngIf=\"labelVisible(arc)\"\n        [data]=\"arc\"\n        [radius]=\"outerRadius\"\n        [color]=\"color(arc)\"\n        [label]=\"labelText(arc)\"\n        [max]=\"max\"\n        [value]=\"arc.value\"\n        [explodeSlices]=\"explodeSlices\"\n        [animations]=\"animations\">\n      </svg:g>\n      <svg:g\n        ngx-charts-pie-arc\n        [startAngle]=\"arc.startAngle\"\n        [endAngle]=\"arc.endAngle\"\n        [innerRadius]=\"innerRadius\"\n        [outerRadius]=\"outerRadius\"\n        [fill]=\"color(arc)\"\n        [value]=\"arc.data.value\"\n        [gradient]=\"gradient\"\n        [data]=\"arc.data\"\n        [max]=\"max\"\n        [explodeSlices]=\"explodeSlices\"\n        [isActive]=\"isActive(arc.data)\"\n        [animate]=\"animations\"\n        (select)=\"onClick($event)\"\n        (activate)=\"activate.emit($event)\"\n        (deactivate)=\"deactivate.emit($event)\"\n        ngx-tooltip\n        [tooltipDisabled]=\"tooltipDisabled\"\n        [tooltipPlacement]=\"'top'\"\n        [tooltipType]=\"'tooltip'\"\n        [tooltipTitle]=\"tooltipTemplate ? undefined : tooltipText(arc)\"\n        [tooltipTemplate]=\"tooltipTemplate\"\n        [tooltipContext]=\"arc.data\">\n      </svg:g>\n    </svg:g>\n  ",
-            changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
+            template: "\n    <svg:g *ngFor=\"let arc of data; trackBy:trackBy\">\n      <svg:g ngx-charts-pie-label\n             *ngIf=\"labelVisible(arc)\"\n             [data]=\"arc\"\n             [radius]=\"outerRadius\"\n             [color]=\"color(arc)\"\n             [label]=\"labelText(arc)\"\n             [labelTrimCharacters]=\"labelTrimCharacters\"\n             [max]=\"max\"\n             [value]=\"arc.value\"\n             [explodeSlices]=\"explodeSlices\"\n             [animations]=\"animations\">\n      </svg:g>\n      <svg:g\n        ngx-charts-pie-arc\n        [startAngle]=\"arc.startAngle\"\n        [endAngle]=\"arc.endAngle\"\n        [innerRadius]=\"innerRadius\"\n        [outerRadius]=\"outerRadius\"\n        [fill]=\"color(arc)\"\n        [value]=\"arc.data.value\"\n        [gradient]=\"gradient\"\n        [data]=\"arc.data\"\n        [max]=\"max\"\n        [explodeSlices]=\"explodeSlices\"\n        [isActive]=\"isActive(arc.data)\"\n        [animate]=\"animations\"\n        (select)=\"onClick($event)\"\n        (activate)=\"activate.emit($event)\"\n        (deactivate)=\"deactivate.emit($event)\"\n        ngx-tooltip\n        [tooltipDisabled]=\"tooltipDisabled\"\n        [tooltipPlacement]=\"'top'\"\n        [tooltipType]=\"'tooltip'\"\n        [tooltipTitle]=\"tooltipTemplate ? undefined : tooltipText(arc)\"\n        [tooltipTemplate]=\"tooltipTemplate\"\n        [tooltipContext]=\"arc.data\">\n      </svg:g>\n    </svg:g>\n  ",
+            changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush
         })
     ], PieSeriesComponent);
     return PieSeriesComponent;
