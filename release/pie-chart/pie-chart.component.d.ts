@@ -12,6 +12,7 @@ export declare class PieChartComponent extends BaseChartComponent {
     activeEntries: any[];
     tooltipDisabled: boolean;
     labelFormatting: any;
+    labelTrimCharacters: number;
     tooltipText: any;
     select: EventEmitter<{}>;
     activate: EventEmitter<any>;

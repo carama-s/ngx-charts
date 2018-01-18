@@ -29,6 +29,7 @@ import { BaseChartComponent } from '../common/base-chart.component';
           [colors]="colors"
           [showLabels]="labels"
           [labelFormatting]="labelFormatting"
+          [labelTrimCharacters]="labelTrimCharacters"
           [series]="data"
           [activeEntries]="activeEntries"
           [innerRadius]="innerRadius"
@@ -65,6 +66,7 @@ export class PieChartComponent extends BaseChartComponent {
   @Input() activeEntries: any[] = [];
   @Input() tooltipDisabled: boolean = false;
   @Input() labelFormatting: any;
+  @Input() labelTrimCharacters = 20;
   @Input() tooltipText: any;
 
   @Output() select = new EventEmitter();

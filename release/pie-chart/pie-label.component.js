@@ -13,6 +13,7 @@ import { trimLabel } from '../common/trim-label.helper';
 var PieLabelComponent = /** @class */ (function () {
     function PieLabelComponent() {
         this.animations = true;
+        this.labelTrimCharacters = 20;
         this.isIE = /(edge|msie|trident)/i.test(navigator.userAgent);
         this.trimLabel = trimLabel;
     }
@@ -109,10 +110,14 @@ var PieLabelComponent = /** @class */ (function () {
         Input(),
         __metadata("design:type", Boolean)
     ], PieLabelComponent.prototype, "animations", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], PieLabelComponent.prototype, "labelTrimCharacters", void 0);
     PieLabelComponent = __decorate([
         Component({
             selector: 'g[ngx-charts-pie-label]',
-            template: "\n    <title>{{label}}</title>\n    <svg:g\n      [attr.transform]=\"attrTransform\"\n      [style.transform]=\"styleTransform\"\n      [style.transition]=\"textTransition\">\n      <svg:text\n        class=\"pie-label\"\n        [class.animation]=\"animations\"\n        dy=\".35em\"\n        [style.textAnchor]=\"textAnchor()\"\n        [style.shapeRendering]=\"'crispEdges'\">\n        {{trimLabel(label, 10)}}\n      </svg:text>\n    </svg:g>\n    <svg:path\n      [attr.d]=\"line\"\n      [attr.stroke]=\"color\"\n      fill=\"none\"\n      class=\"pie-label-line line\"\n      [class.animation]=\"animations\">\n    </svg:path>\n  ",
+            template: "\n    <title>{{label}}</title>\n    <svg:g\n      [attr.transform]=\"attrTransform\"\n      [style.transform]=\"styleTransform\"\n      [style.transition]=\"textTransition\">\n      <svg:text\n        class=\"pie-label\"\n        [class.animation]=\"animations\"\n        dy=\".35em\"\n        [style.textAnchor]=\"textAnchor()\"\n        [style.shapeRendering]=\"'crispEdges'\">\n        {{trimLabel(label, labelTrimCharacters)}}\n      </svg:text>\n    </svg:g>\n    <svg:path\n      [attr.d]=\"line\"\n      [attr.stroke]=\"color\"\n      fill=\"none\"\n      class=\"pie-label-line line\"\n      [class.animation]=\"animations\">\n    </svg:path>\n  ",
             changeDetection: ChangeDetectionStrategy.OnPush
         }),
         __metadata("design:paramtypes", [])
