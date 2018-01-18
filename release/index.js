@@ -17481,6 +17481,7 @@ var PieSeriesComponent = /** @class */ (function () {
         this.series = [];
         this.innerRadius = 60;
         this.outerRadius = 80;
+        this.labelTrimCharacters = 20;
         this.tooltipDisabled = false;
         this.animations = true;
         this.select = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
@@ -17610,6 +17611,10 @@ var PieSeriesComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
     ], PieSeriesComponent.prototype, "labelFormatting", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        __metadata("design:type", Object)
+    ], PieSeriesComponent.prototype, "labelTrimCharacters", void 0);
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Function)

@@ -16,6 +16,7 @@ var PieSeriesComponent = /** @class */ (function () {
         this.series = [];
         this.innerRadius = 60;
         this.outerRadius = 80;
+        this.labelTrimCharacters = 20;
         this.tooltipDisabled = false;
         this.animations = true;
         this.select = new EventEmitter();
@@ -145,6 +146,10 @@ var PieSeriesComponent = /** @class */ (function () {
         Input(),
         __metadata("design:type", Object)
     ], PieSeriesComponent.prototype, "labelFormatting", void 0);
+    __decorate([
+        Input(),
+        __metadata("design:type", Object)
+    ], PieSeriesComponent.prototype, "labelTrimCharacters", void 0);
     __decorate([
         Input(),
         __metadata("design:type", Function)
