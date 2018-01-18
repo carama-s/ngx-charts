@@ -69,6 +69,7 @@ export class PieSeriesComponent implements OnChanges {
   @Input() gradient: boolean;
   @Input() activeEntries: any[];
   @Input() labelFormatting: any;
+  @Input() labelTrimCharacters = 20;
   @Input() tooltipText: (o: any) => any;
   @Input() tooltipDisabled: boolean = false;
   @Input() tooltipTemplate: TemplateRef<any>;
